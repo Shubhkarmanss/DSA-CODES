@@ -1,5 +1,16 @@
 {
     "files.associations": {
-        "Linkedlist.C": "cpp"
+        "Linkedlist.C": "cpp",
+        "numbersystemdecimalandbinary.C": "cpp",
+        "extracodes.C": "cpp",
+        "binarysearch.C": "cpp",
+        "Arrays.C": "cpp",
+        "Array2D.C": "cpp",
+        "Oops.C": "cpp",
+        "Patterns.C": "cpp",
+        "Recursion.C": "cpp",
+        "Sorting.C": "cpp",
+        "strings.C": "cpp",
+        "tempCodeRunnerFile.C": "cpp"
     }
 }

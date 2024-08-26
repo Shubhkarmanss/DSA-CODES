@@ -663,7 +663,7 @@
 //         ListNode* next = nullptr;
 //         int count = 0;
 
-//         while (current != nullptr && count < k) {
+//         while (current != nullptr && count < k) {  //current !=nullptr is for last case
 //             next = current->next;
 //             current->next = previous;
 //             previous = current;
@@ -715,3 +715,32 @@
 //     }
     
 // };
+
+//  REMOVE DUPLICATE node in sorted linked list
+
+
+// Node * removeDuplicates(Node *head)
+// {
+//     if(head==NULL)
+//     {
+//         return NULL;
+//     }
+//     Node *curr=head;
+
+//     while(curr!=NULL ||curr->next!=NULL)
+//     {
+//         if(curr->data==curr->next->data){
+
+//             Node*next_next=curr->next->next;
+//             Node*nodetodelete=curr->next;
+//             delete (nodetodelete);
+//             curr->next=next_next;
+//         }
+        
+        
+//          else {
+//             curr = curr->next;
+//         }
+//     }
+//     return head;
+// }
