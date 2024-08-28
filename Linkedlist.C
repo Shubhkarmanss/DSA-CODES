@@ -744,3 +744,156 @@
 //     }
 //     return head;
 // }
+
+// LEETCODE 234. Palindrome Linked List
+
+// Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
+
+// FIND IF PALINDROME EXIST IN LINKED LIST
+
+
+// class Solution {
+// public:
+//     ListNode* findmiddle(ListNode* head) {
+//         if (head == NULL || head->next == NULL) {
+//             return head;
+//         }
+//         ListNode* slow = head;
+//         ListNode* fast = head;
+
+//         while (fast != NULL && fast->next != NULL) {
+//             slow = slow->next;
+//             fast = fast->next->next;
+//         }
+//         return slow; // slow is now at the middle of the list
+//     }
+
+//     bool isPalindrome(ListNode* head) 
+//     { 
+//         if (head == NULL || head->next == NULL) {
+//             return true;
+//         }
+
+//         // Find the middle of the list
+//         ListNode* middle = findmiddle(head);
+
+//         // Reverse the second half of the list
+//         ListNode* current = middle;
+//         ListNode* previous = NULL;
+//         ListNode* temp = NULL;
+
+//         while (current != NULL) {
+//             temp = current->next;
+//             current->next = previous;
+//             previous = current;
+//             current = temp;
+//         }
+//         // Now 'previous' is the head of the reversed second half
+
+//         // Compare the first and second half
+//         while (previous != NULL) {
+//             if (head->val != previous->val) {
+//                 return false;
+//             }
+//             head = head->next;
+//             previous = previous->next;
+//         }
+
+//         return true;
+//     }
+// };
+
+// LEETCODE 2. Add Two Numbers
+// You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+// You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+// ADD TWO NUMBER IN A LINKED LIST
+
+// class Solution {
+// public:
+//     // Function to reverse a linked list
+//     ListNode* reverse(ListNode* head) {
+//         ListNode* temp = NULL;     // Temporary pointer to store the next node
+//         ListNode* curr = head;     // Pointer to iterate through the list
+//         ListNode* prev = NULL;     // Pointer to store the previous node
+
+//         // Iterate through the list and reverse the links
+//         while (curr != NULL) {
+//             temp = curr->next;     // Store the next node
+//             curr->next = prev;     // Reverse the current node's link
+//             prev = curr;           // Move prev and curr one step forward
+//             curr = temp;
+//         }
+//         return prev;               // prev will be the new head of the reversed list
+//     }
+
+//     // Function to insert a value at the end of the answer list
+//     void insertattail(ListNode*& anshead, ListNode*& anstail, int val) {
+//         ListNode* temp = new ListNode(val); // Create a new node with the given value
+//         if (anshead == NULL) {
+//             // If the answer list is empty, initialize both head and tail
+//             anshead = temp;
+//             anstail = temp;
+//         } else {
+//             // Otherwise, add the new node to the end of the list
+//             anstail->next = temp;
+//             anstail = temp;
+//         }
+//     }
+
+//     // Function to add two reversed linked lists
+//     ListNode* add(ListNode* head1, ListNode* head2) {
+//         int carry = 0;               // Initialize carry to 0
+//         ListNode* anshead = NULL;    // Head of the answer list
+//         ListNode* anstail = NULL;    // Tail of the answer list
+
+//         // Loop through both lists until all digits and carry are processed
+//         while (head1 != NULL || head2 != NULL || carry != 0) {
+//             int val1 = 0;
+//             if (head1 != NULL) {
+//                 val1 = head1->val;    // Get value from the first list
+//             }
+//             int val2 = 0;
+//             if (head2 != NULL) {
+//                 val2 = head2->val;    // Get value from the second list
+//             }
+//             int sum = carry + val1 + val2;  // Calculate the sum
+//             int digit = sum % 10;           // Get the last digit of the sum
+
+//             // Insert the digit into the answer list
+//             insertattail(anshead, anstail, digit);
+//             carry = sum / 10;              // Calculate new carry
+
+//             // Move to the next nodes in the lists
+//             if (head1 != NULL) {
+//                 head1 = head1->next;
+//             }
+//             if (head2 != NULL) {
+//                 head2 = head2->next;
+//             }
+//         }
+
+//         return anshead;  // Return the head of the answer list
+//     }
+
+//     // Main function to add two numbers represented by linked lists
+//     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+//         if (l1 == NULL) {
+//             return l2;  // If the first list is empty, return the second list
+//         }
+//         if (l2 == NULL) {
+//             return l1;  // If the second list is empty, return the first list
+//         }
+
+//         // Reverse both lists to make addition easier
+//         ListNode* head1 = reverse(l1);
+//         ListNode* head2 = reverse(l2);
+
+//         // Add the two reversed lists
+//         ListNode* ans = add(head1, head2);
+
+//         // Reverse the result to get the final answer
+//         ans = reverse(ans);
+//         return ans;
+//     }
+// };
