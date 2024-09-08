@@ -55,15 +55,15 @@ int main()
 
 // Q2 (FAST POWER) Exponentiation by squaring. This algorithm efficiently computes x^n using a binary representation of n.
 
-int exponential(int x, int n) {
-    int res = 1;
-    while (n > 0) {
-        if (n & 1) { // If the least significant bit of n is 1
-            res = res * x; // Multiply the result by x
-        }
-        x = x * x; // Square x
-        n = n >> 1; // Right shift n by 1 bit (divide n by 2)
-    }
-    return res;
-}
+// int exponential(int x, int n) {
+//     int res = 1;
+//     while (n > 0) {
+//         if (n & 1) { // If the least significant bit of n is 1
+//             res = res * x; // Multiply the result by x
+//         }
+//         x = x * x; // Square x
+//         n = n >> 1; // Right shift n by 1 bit (divide n by 2)
+//     }
+//     return res;
+// }
 

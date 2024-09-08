@@ -897,3 +897,98 @@
 //         return ans;
 //     }
 // };
+
+
+
+
+// LEETCODE 148. Sort List
+// Given the head of a linked list, return the list after sorting it in ascending order.
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+// class Solution {
+// public:
+//     ListNode* merge(ListNode* left, ListNode* right) {
+//         if (left == NULL) {
+//             return right;
+//         }
+//         if (right == NULL) {
+//             return left;
+//         }
+
+//         ListNode* ans = new ListNode(-1); // Dummy node to simplify the merge process
+//         ListNode* temp = ans;
+
+//         // Merge two sorted lists
+//         while (left != NULL && right != NULL) {
+//             if (left->val < right->val) {
+//                 temp->next = left;
+//                 left = left->next;
+//             } else {
+//                 temp->next = right;
+//                 right = right->next;
+//             }
+//             temp = temp->next;
+//         }
+
+//         // Attach the remaining part of the list
+//         if (left != NULL) {
+//             temp->next = left;
+//         } else {
+//             temp->next = right;
+//         }
+
+//         // Store the head of the merged list
+//         ListNode* mergedHead = ans->next;
+
+//         // Clean up the dummy node
+//         delete ans;
+
+//         return mergedHead;
+//     }
+
+//     ListNode* findmid(ListNode* head) {
+//         if (head == NULL || head->next == NULL) {
+//             return head;
+//         }
+
+//         ListNode* slow = head;
+//         ListNode* fast = head->next;
+
+//         while (fast != NULL && fast->next != NULL) {
+//             slow = slow->next;
+//             fast = fast->next->next;
+//         }
+
+//         return slow;
+//     }
+
+//     ListNode* sortList(ListNode* head) {
+//         if (head == NULL || head->next == NULL) {
+//             return head;
+//         }
+
+//         // Find the middle of the list
+//         ListNode* mid = findmid(head);
+
+//         // Split the list into two halves
+//         ListNode* left = head;
+//         ListNode* right = mid->next;
+//         mid->next = NULL;
+
+//         // Recursively sort both halves
+//         left = sortList(left);
+//         right = sortList(right);
+
+//         // Merge the sorted halves
+//         return merge(left, right);
+//     }
+// };
