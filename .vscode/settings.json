@@ -6,6 +6,12 @@
         "numbersystemdecimalandbinary.C": "cpp",
         "Oops.C": "cpp",
         "Recursion.C": "cpp",
-        "Patterns.C": "cpp"
+        "Patterns.C": "cpp",
+        "Array2D.C": "cpp",
+        "Arrays.C": "cpp",
+        "binarysearch.C": "cpp",
+        "tempCodeRunnerFile.C": "cpp",
+        "Sorting.C": "cpp",
+        "strings.C": "cpp"
     }
 }

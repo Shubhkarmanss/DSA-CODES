@@ -5,7 +5,7 @@
 
 //2. Decimal to binary conversion
 //  method 2,do & with 1 to find bit
-
+                                        
 //3. Binary to decimal conversion
 //  method 1, divide by 10
 
